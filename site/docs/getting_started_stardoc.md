@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Getting started
+stylesheet: docs
 ---
 
 Stardoc is a documentation generator for [Bazel](https://bazel.build) build rules
