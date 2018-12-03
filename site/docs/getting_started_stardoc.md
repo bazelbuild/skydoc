@@ -43,7 +43,6 @@ node_repositories()
 
 load("@io_bazel_rules_sass//:defs.bzl", "sass_repositories")
 sass_repositories()
-)
 ```
 
 The load statements and function calls after the `io_bazel_skydoc` repository
