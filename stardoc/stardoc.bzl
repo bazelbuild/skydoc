@@ -38,7 +38,7 @@ def _stardoc_impl(ctx):
                  omit_if_empty = True)
     args.add_all(input_files,
                  format_each = "--dep_roots=%s",
-                 map_each = _root_from_path,
+                 map_each = _root_from_file,
                  omit_if_empty = True,
                  uniquify = True)
     args.add_all(ctx.attr.semantic_flags)
