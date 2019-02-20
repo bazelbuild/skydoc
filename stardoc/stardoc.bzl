@@ -36,6 +36,13 @@ def _stardoc_impl(ctx):
     args.add_all(ctx.attr.symbol_names,
                  format_each = "--symbols=%s",
                  omit_if_empty = True)
+    # TODO(cparsons): Note that use of dep_roots alone does not guarantee
+    # the correct file is loaded. If two files exist under the same path
+    # but are under different roots, it is possible that Stardoc loads the
+    # one that is not explicitly an input to this action (if sandboxing is
+    # disabled). The correct way to resolve this is to explicitly specify
+    # the full set of transitive dependency Starlark files as action args
+    # (maybe using a param file), but this requires some work.
     args.add_all(input_files,
                  format_each = "--dep_roots=%s",
                  map_each = _root_from_file,
