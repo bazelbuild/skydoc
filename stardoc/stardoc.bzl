@@ -33,9 +33,12 @@ def _stardoc_impl(ctx):
     args = ctx.actions.args()
     args.add("--input=" + str(ctx.file.input.owner))
     args.add("--output=" + ctx.outputs.out.path)
-    args.add_all(ctx.attr.symbol_names,
-                 format_each = "--symbols=%s",
-                 omit_if_empty = True)
+    args.add_all(
+        ctx.attr.symbol_names,
+        format_each = "--symbols=%s",
+        omit_if_empty = True,
+    )
+
     # TODO(cparsons): Note that use of dep_roots alone does not guarantee
     # the correct file is loaded. If two files exist under the same path
     # but are under different roots, it is possible that Stardoc loads the
@@ -43,11 +46,13 @@ def _stardoc_impl(ctx):
     # disabled). The correct way to resolve this is to explicitly specify
     # the full set of transitive dependency Starlark files as action args
     # (maybe using a param file), but this requires some work.
-    args.add_all(input_files,
-                 format_each = "--dep_roots=%s",
-                 map_each = _root_from_file,
-                 omit_if_empty = True,
-                 uniquify = True)
+    args.add_all(
+        input_files,
+        format_each = "--dep_roots=%s",
+        map_each = _root_from_file,
+        omit_if_empty = True,
+        uniquify = True,
+    )
     args.add_all(ctx.attr.semantic_flags)
     stardoc = ctx.executable.stardoc
     ctx.actions.run(
