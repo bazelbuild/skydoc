@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Skydoc deprecation
+title: Skydoc Deprecation
 stylesheet: docs
 ---
 
@@ -118,10 +118,15 @@ bzl_library(
 Thus, each dependency should have its own `bzl_library` target defined beside it, and it
 need only depend on the `bzl_library` targets corresponding to its direct dependencies.
 
-Unfortunately, this migration might involve creating a large number of `bzl_library` targets,
+Unfortunately, this migration might involve creating a large number of new `bzl_library` targets,
 but this work is useful beyond Stardoc. For example, `bzl_library` can be also used to gather
 transitive Starlark dependencies for use in shell tests or other test frameworks.
 
 See [Generating Documentation](https://skydoc.bazel.build/docs/generating_stardoc.html) for
 a tutorial.
+
+## Migration Issues
+
+If you run into any issues migrating, please file a
+[github issue](https://github.com/bazelbuild/skydoc/issues).
 
