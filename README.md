@@ -17,9 +17,9 @@ details on the deprecation, and for some migration tips.
 
 ## Get Started
 
-* How to [set up Stardoc for your project](https://skydoc.bazel.build/docs/getting_started.html)
-* Writing [docstrings](https://skydoc.bazel.build/docs/writing.html)
-* How to [integrate Stardoc with your build](https://skydoc.bazel.build/docs/generating.html).
+* How to [set up Stardoc for your project](https://skydoc.bazel.build/docs/getting_started_stardoc.html)
+* Writing [docstrings](https://skydoc.bazel.build/docs/writing_stardoc.html)
+* How to [integrate Stardoc with your build](https://skydoc.bazel.build/docs/generating_stardoc.html).
 
 ## About Stardoc
 
