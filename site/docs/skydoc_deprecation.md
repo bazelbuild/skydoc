@@ -70,7 +70,7 @@ Example:
 
 ### Different Starlark Rule
 
-Stardoc uses a different Starlark rule Skydoc with different attributes.
+Stardoc uses a different Starlark rule than Skydoc with different attributes.
 
 See [Generating Documentation](https://skydoc.bazel.build/docs/generating_stardoc.html) for a
 tutorial on using the new rule, and the
@@ -86,8 +86,8 @@ dependencies, so that it can fully evaluate your Starlark code.
 For example, suppose your `mypackage/foo.bzl` file depends on `other/package/bar.bzl`, which
 depends on `third/package/baz.bzl`.
 
+**BUILD**:
 ```
-# BUILD
 load("@io_bazel_skydoc//stardoc:stardoc.bzl", "stardoc")
 
 stardoc(
@@ -96,8 +96,9 @@ stardoc(
     out = "foo_doc.md",
     deps = ["//other/package:bar"],
 )
-
-# other/package/BUILD
+```
+**other/package/BUILD**:
+```
 load("@bazel_skylib//:bzl_library.bzl", "bzl_library")
 
 bzl_library(
@@ -105,8 +106,9 @@ bzl_library(
     srcs = ["bar.bzl"],
     deps = ["//third/package:baz"],
 )
-
-# third/package/BUILD
+```
+**third/package/BUILD**:
+```
 load("@bazel_skylib//:bzl_library.bzl", "bzl_library")
 
 bzl_library(
@@ -115,10 +117,12 @@ bzl_library(
 )
 ```
 
-Thus, each dependency should have its own `bzl_library` target defined beside it, and it
-need only depend on the `bzl_library` targets corresponding to its direct dependencies.
+Thus, each `.bzl` file should appear in the `srcs` of a `bzl_library` target defined in the same
+package. The `deps` of this `bzl_library` should be (only) the `bzl_library` targets corresponding
+to the files that are _directly_ `load()`ed by the `srcs`. This structure mirrors that of other
+`<language>_library` rules in Bazel.
 
-Unfortunately, this migration might involve creating a large number of new `bzl_library` targets,
+This migration might involve creating a large number of new `bzl_library` targets,
 but this work is useful beyond Stardoc. For example, `bzl_library` can be also used to gather
 transitive Starlark dependencies for use in shell tests or other test frameworks.
 
