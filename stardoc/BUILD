@@ -23,3 +23,17 @@ stardoc(
     ],
     deps = [":stardoc_lib"],
 )
+
+java_binary(
+    name = "stardoc",
+    main_class = "com.google.devtools.build.skydoc.SkydocMain",
+    runtime_deps = [
+        ":prebuilt_stardoc_binary",
+    ],
+)
+
+java_import(
+    name = "prebuilt_stardoc_binary",
+    jars = ["stardoc_binary.jar"],
+    visibility = ["//visibility:private"],
+)
