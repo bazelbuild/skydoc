@@ -87,6 +87,7 @@ For example, suppose your `mypackage/foo.bzl` file depends on `other/package/bar
 depends on `third/package/baz.bzl`.
 
 **BUILD**:
+
 ```
 load("@io_bazel_skydoc//stardoc:stardoc.bzl", "stardoc")
 
@@ -97,7 +98,9 @@ stardoc(
     deps = ["//other/package:bar"],
 )
 ```
+
 **other/package/BUILD**:
+
 ```
 load("@bazel_skylib//:bzl_library.bzl", "bzl_library")
 
@@ -107,7 +110,9 @@ bzl_library(
     deps = ["//third/package:baz"],
 )
 ```
+
 **third/package/BUILD**:
+
 ```
 load("@bazel_skylib//:bzl_library.bzl", "bzl_library")
 
