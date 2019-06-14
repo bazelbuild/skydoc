@@ -25,6 +25,7 @@ def _skydoc(ctx):
     for f in ctx.files.skydoc:
         if not f.path.endswith(".py"):
             return f
+    fail("no valid .py file")
 
 def _skylark_doc_impl(ctx):
     """Implementation of the skylark_doc rule."""
