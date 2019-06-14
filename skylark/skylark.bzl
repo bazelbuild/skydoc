@@ -97,6 +97,7 @@ skylark_doc = rule(
         "skylark_doc_zip": "%{name}-skydoc.zip",
     },
 )
+# buildozer: disable=no-effect
 """Generates Skylark rule documentation.
 
 Documentation is generated in directories that follows the package structure
