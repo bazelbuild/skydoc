@@ -222,7 +222,6 @@ stardoc_test(
     deps = [
         "testdata/providers_for_attributes_test/dep.bzl",
     ],
-    semantic_flags = ["--incompatible_disallow_struct_provider_syntax=false"]
 )
 
 stardoc_test(
