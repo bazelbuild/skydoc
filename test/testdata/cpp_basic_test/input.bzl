@@ -1,12 +1,12 @@
-# buildifier: disable=function-docstring,module-docstring
+# buildifier: disable=module-docstring
+# buildifier: disable=function-docstring
 def exercise_the_api():
     var1 = cc_common.CcToolchainInfo
 
 exercise_the_api()
 
-# buildifier: disable=rule-impl-return
 def my_rule_impl(ctx):
-    return struct()
+    return []
 
 cpp_related_rule = rule(
     implementation = my_rule_impl,

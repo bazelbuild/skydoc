@@ -1,4 +1,5 @@
-# buildifier: disable=function-docstring,module-docstring
+# buildifier: disable=module-docstring
+# buildifier: disable=function-docstring
 def exercise_the_api():
     _var1 = android_common.create_device_broker_info("")
     _var2 = ApkInfo
@@ -11,9 +12,8 @@ def exercise_the_api():
 
 exercise_the_api()
 
-# buildifier: disable=rule-impl-return
 def my_rule_impl(ctx):
-    return struct()
+    return []
 
 android_related_rule = rule(
     implementation = my_rule_impl,

@@ -1,6 +1,7 @@
-# buildifier: disable=function-docstring,module-docstring,rule-impl-return
+# buildifier: disable=module-docstring
+# buildifier: disable=function-docstring
 def my_rule_impl(ctx):
-    return struct()
+    return []
 
 my_rule = rule(
     implementation = my_rule_impl,
