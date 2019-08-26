@@ -1,9 +1,11 @@
+# buildifier: disable=function-docstring,module-docstring
 def exercise_the_api():
     var1 = apple_common.platform_type
     var2 = apple_common.AppleDynamicFramework
 
 exercise_the_api()
 
+# buildifier: disable=rule-impl-return
 def my_rule_impl(ctx):
     return struct()
 

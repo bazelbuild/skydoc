@@ -1,9 +1,10 @@
 # This is here to test that built-in names can be shadowed by global names.
 # (Regression test for http://b/35984389).
+# buildifier: disable=module-docstring
 config = "value for global config variable"
 
 def my_rule_impl(ctx):
-    return struct()
+    return []
 
 def exercise_the_api():
     var1 = config_common.FeatureFlagInfo

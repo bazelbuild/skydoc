@@ -1,3 +1,4 @@
+# buildifier: disable=function-docstring,module-docstring
 def exercise_the_api():
     var1 = java_common.JavaRuntimeInfo
     var2 = JavaInfo
@@ -6,7 +7,7 @@ def exercise_the_api():
 exercise_the_api()
 
 def my_rule_impl(ctx):
-    return struct()
+    return []
 
 java_related_rule = rule(
     implementation = my_rule_impl,

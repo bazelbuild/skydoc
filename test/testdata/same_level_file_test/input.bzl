@@ -1,3 +1,4 @@
+# buildifier: disable=module-docstring
 load(":dep.bzl", "my_rule_impl")
 
 my_rule = rule(

@@ -1,3 +1,4 @@
+# buildifier: disable=function-docstring,module-docstring
 def exercise_the_api():
     _var6 = configuration_field("foo", "bar")
 

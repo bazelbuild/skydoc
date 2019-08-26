@@ -21,7 +21,7 @@ example = provider(
 )
 
 def _rule_impl(ctx):
-    print("Hello World")
+    return []
 
 my_example = rule(
     implementation = _rule_impl,

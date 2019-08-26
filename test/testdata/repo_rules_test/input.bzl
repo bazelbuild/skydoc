@@ -1,3 +1,4 @@
+# buildifier: disable=module-docstring
 def _repo_rule_impl(ctx):
     ctx.file("BUILD", "")
 

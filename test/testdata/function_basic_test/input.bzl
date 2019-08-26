@@ -9,6 +9,7 @@ def check_sources(
         int_param = 2,
         dict_param = {},
         struct_param = struct(foo = "bar")):
+    # buildifier: disable=function-docstring-args
     """Runs some checks on the given source files.
 
     This rule runs checks on a given set of source files.
@@ -31,7 +32,7 @@ def check_sources(
         dict_param,
         struct_param,
     ]
-    print("Hah. All that documentation but nothing really to see here")
+    x = ("Hah. All that documentation but nothing really to see here")
 
 def undocumented_function(a, b, c):
     pass
