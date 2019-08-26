@@ -1,4 +1,5 @@
-# buildifier: disable=function-docstring,module-docstring
+# buildifier: disable=module-docstring
+# buildifier: disable=function-docstring
 def exercise_the_api():
     var1 = java_common.JavaRuntimeInfo
     var2 = JavaInfo

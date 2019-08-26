@@ -1,4 +1,5 @@
-# buildifier: disable=function-docstring,module-docstring
+# buildifier: disable=module-docstring
+# buildifier: disable=function-docstring
 def exercise_the_api():
     var1 = apple_common.platform_type
     var2 = apple_common.AppleDynamicFramework
