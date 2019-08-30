@@ -39,7 +39,7 @@ def stardoc_test(
 
     Args:
       name: A unique name to qualify the created targets.
-      input_file: The label string of the skylark input file for which documentation is generated
+      input_file: The label string of the Starlark input file for which documentation is generated
           in this test.
       golden_file: The label string of the golden file containing the documentation when skydoc
           is run on the input file.
