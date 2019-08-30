@@ -41,7 +41,7 @@ def stardoc_test(
       name: A unique name to qualify the created targets.
       input_file: The label string of the Starlark input file for which documentation is generated
           in this test.
-      golden_file: The label string of the golden file containing the documentation when skydoc
+      golden_file: The label string of the golden file containing the documentation when stardoc
           is run on the input file.
       deps: A list of label strings of skylark file dependencies of the input_file.
       test: The type of test (default or pure_markdown).
