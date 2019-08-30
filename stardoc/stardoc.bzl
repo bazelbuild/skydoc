@@ -54,11 +54,12 @@ def _stardoc_impl(ctx):
         uniquify = True,
     )
     # Needed in case some files are referenced across local repository
-    # namespace. For example, consider a file under a local repository @bar
-    # which may be referenced as either //foo/bar:lib.bzl or @bar//:lib.bzl.
-    # If the stardoc target itself is under @bar, then both ./lib.bzl and
-    # external/bar/lib.bzl must be checked, depending on how the file
-    # is loaded.
+    # namespace. For example, consider a file under a nested local repository @bar
+    # rooted under ./foo/bar/WORKSPACE. Consider a stardoc target 'lib_doc' under
+    # foo/bar/BUILD to document foo/bar/lib.bzl.
+    # The stardoc target references @bar//:lib.bzl (which appears just as :lib.bzl), but the
+    # actual build is taking place in the root repository, thus the source file
+    # is present under external/bar/lib.bzl.
     stardoc_args.add(
         "--dep_roots=external/" + ctx.label.workspace_name)
     stardoc_args.add_all(ctx.attr.semantic_flags)
