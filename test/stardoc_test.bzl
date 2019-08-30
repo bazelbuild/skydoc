@@ -43,7 +43,7 @@ def stardoc_test(
           in this test.
       golden_file: The label string of the golden file containing the documentation when stardoc
           is run on the input file.
-      deps: A list of label strings of skylark file dependencies of the input_file.
+      deps: A list of label strings of starlark file dependencies of the input_file.
       test: The type of test (default or pure_markdown).
       **kwargs: A dictionary of input template names mapped to template file path for which documentation is generated.
       """
