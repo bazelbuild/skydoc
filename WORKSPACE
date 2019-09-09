@@ -33,7 +33,7 @@ git_repository(
 # Needed for generating the Stardoc release binary.
 git_repository(
     name = "io_bazel",
-    commit = "858412781d76b7d27c39dc58b7f24cf645bdf035",  # Aug 7, 2019
+    commit = "0bb860d20d171b30e31aa898f6403d082cb5aa1b",  # Sep 9, 2019
     remote = "https://github.com/bazelbuild/bazel.git",
 )
 
@@ -78,3 +78,8 @@ http_archive(
     ],
 )
 
+# Needed only for testing stardoc across local-repository bounds.
+local_repository(
+    name = "local_repository_test",
+    path = "test/testdata/local_repository_test",
+)
