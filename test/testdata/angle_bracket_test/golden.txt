@@ -16,7 +16,7 @@ Rule with <brackets>
 | Name  | Description | Type | Mandatory |
 | :-------------: | :-------------: | :-------------: | :-------------: |
 | name |  A unique name for this target.   | <a href="https://bazel.build/docs/build-ref.html#name">Name</a> | required |
-| useless |  Args with some <b>formatting</b>   | String | optional |
+| useless |  Args with some tags: &lt;tag1&gt;, &lt;tag2&gt;   | String | optional |
 
 
 <a name="#bracketuse"></a>
@@ -34,7 +34,7 @@ Information with <brackets>
 
 | Name  | Description |
 | :-------------: | :-------------: |
-| foo |  A string representing foo    |
+| foo |  A string representing &lt;foo&gt;    |
 | bar |  A string representing bar    |
 | baz |  A string representing baz    |
 
@@ -57,6 +57,6 @@ This rule runs checks on <angle brackets>.
 
 | Name  | Description | Default Value |
 | :-------------: | :-------------: | :-------------: |
-| name |  an arg with <b>formatted</b> docstring.   |  none |
+| name |  an arg with **formatted** docstring.   |  none |
 
 
