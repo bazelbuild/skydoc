@@ -31,7 +31,7 @@ def html_tables_stardoc(name, **kwargs):
         aspect_template = Label("//stardoc:templates/html_tables/aspect.vm"),
         func_template = Label("//stardoc:templates/html_tables/func.vm"),
         header_template = Label("//stardoc:templates/html_tables/header.vm"),
-        provider_template = Label("//stardoc:templates/html_tables/pure_markdown/provider.vm"),
-        rule_template = Label("//stardoc:templates/html_tables/pure_markdown/rule.vm"),
+        provider_template = Label("//stardoc:templates/html_tables/provider.vm"),
+        rule_template = Label("//stardoc:templates/html_tables/rule.vm"),
         **kwargs
     )
