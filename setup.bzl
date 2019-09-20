@@ -14,7 +14,6 @@
 
 """Repository external dependency resolution functions."""
 
-load("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository")
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
 def _include_if_not_defined(repo_rule, name, **kwargs):
@@ -69,10 +68,11 @@ def skydoc_repositories():
         sha256 = "2ef429f5d7ce7111263289644d233707dba35e39696377ebab8b0bc701f7818e",
     )
     _include_if_not_defined(
-        git_repository,
+        http_archive,
         name = "io_bazel_rules_sass",
-        remote = "https://github.com/bazelbuild/rules_sass.git",
-        commit = "8ccf4f1c351928b55d5dddf3672e3667f6978d60",
+        urls = ["https://github.com/bazelbuild/rules_sass/archive/8ccf4f1c351928b55d5dddf3672e3667f6978d60.tar.gz"],
+        sha256 = "d868ce50d592ef4aad7dec4dd32ae68d2151261913450fac8390b3fd474bb898",
+        strip_prefix = "rules_sass-8ccf4f1c351928b55d5dddf3672e3667f6978d60",
     )
     _include_if_not_defined(
         http_archive,
