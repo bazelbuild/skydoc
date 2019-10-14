@@ -14,12 +14,12 @@ stylesheet: home
         written in Starlark.
       </p>
       <p class="lead">
-        (Stardoc is a recent replacement of the documentation generator tool named "Skydoc")
+        (Stardoc is replacement of the **deprecated** documentation generator tool named "Skydoc")
       </p>
-      <a href="/docs/getting_started_stardoc.html" class="mdl-button mdl-js-button
+      <a href="https://github.com/bazelbuild/stardoc" class="mdl-button mdl-js-button
           mdl-button--raised mdl-js-ripple-effect">Get Started with Stardoc</a>
       <a href="/docs/getting_started.html" class="mdl-button mdl-js-button
-          mdl-button--raised mdl-js-ripple-effect">Take me to Skydoc documentation instead</a>
+          mdl-button--raised mdl-js-ripple-effect">Take me to (deprecated) Skydoc documentation instead</a>
     </div>
   </div>
 </div>
@@ -30,7 +30,7 @@ stylesheet: home
       <h1>Python docstrings</h1>
       <p>
         Document your Starlark rules
-        <a href="docs/writing_stardoc.html">alongside their definition</a>.
+        <a href="https://github.com/bazelbuild/stardoc/blob/master/docs/writing_stardoc.md">alongside their definition</a>.
       </p>
 {% highlight python %}
 my_rule = rule(
@@ -57,12 +57,12 @@ Example:
         mdl-cell--4-col-phone">
       <h1>Convenient Build Rules</h1>
       <p>
-        Skydoc's own convenient Bazel <a href="docs/generating_stardoc.html">build
-        rules</a> making it to integrate Skydoc into your build or release
-        pipeline.
+        Stardoc's own convenient Bazel
+        <a href="https://github.com/bazelbuild/stardoc/blob/master/docs/generating_stardoc.md">build rules</a>
+        making it to integrate Stardoc into your build or release pipeline.
       </p>
 {% highlight python %}
-load("@io_bazel_skydoc//stardoc:stardoc.bzl",
+load("@io_bazel_stardoc//stardoc:stardoc.bzl",
      "stardoc")
 
 stardoc(
@@ -78,7 +78,9 @@ stardoc(
         mdl-cell--4-col-phone">
       <h1>Beautiful Documentation</h1>
       <p>
-        Generate <a href="docs/skylark.html">documentation</a> in Markdown.
+        Generate
+        <a href="https://github.com/bazelbuild/stardoc/blob/master/docs/stardoc_rule.md">documentation</a>
+        in Markdown.
       </p>
       <img src="/images/sample.png" class="responsive">
     </div>
