@@ -180,7 +180,7 @@ class RuleDocExtractor(object):
           if hasattr(node.value, 's'):
             self._add_rule_doc(key, node.value.s.strip())
         key = None
-    except IOError:
+    except IOError as e:
       print("Failed to parse {0}: {1}".format(bzl_file, e.strerror))
       pass
 
