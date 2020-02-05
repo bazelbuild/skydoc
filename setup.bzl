@@ -115,18 +115,6 @@ def skydoc_repositories():
 
     _include_if_not_defined(
         http_archive,
-        name = "six_archive",
-        urls = ["https://pypi.python.org/packages/source/s/six/six-1.10.0.tar.gz#md5=34eed507548117b2ab523ab14b2f8b55"],
-        sha256 = "105f8d68616f8248e24bf0e9372ef04d3cc10104f1980f54d57b2ce73a5ad56a",
-        build_file_content = SIX_BUILD_FILE,
-        strip_prefix = "six-1.10.0",
-    )
-    native.bind(
-        name = "six",
-        actual = "@six_archive//:six",
-    )
-    _include_if_not_defined(
-        http_archive,
         name = "rules_java",
         urls = [
             "https://mirror.bazel.build/github.com/bazelbuild/rules_java/archive/7cf3cefd652008d0a64a419c34c13bdca6c8f178.zip",

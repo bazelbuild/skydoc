@@ -22,14 +22,6 @@ sass_repositories()
 #######################################################################
 load("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository")
 
-# Needed for skydoc only (not Stardoc), which is deprecated. Users should include
-# this in their WORKSPACE only if they need skydoc.
-git_repository(
-    name = "com_google_protobuf",
-    commit = "7b28271a61a3da0a37f6fda399b0c4c86464e5b3",  # 2018-11-16
-    remote = "https://github.com/protocolbuffers/protobuf.git",
-)
-
 # Needed for generating the Stardoc release binary.
 git_repository(
     name = "io_bazel",
@@ -70,13 +62,17 @@ http_archive(
 # Needed as a transitive dependency of @io_bazel
 http_archive(
     name = "rules_proto",
-    sha256 = "88b0a90433866b44bb4450d4c30bc5738b8c4f9c9ba14e9661deb123f56a833d",
-    strip_prefix = "rules_proto-b0cc14be5da05168b01db282fe93bdf17aa2b9f4",
+    sha256 = "4d421d51f9ecfe9bf96ab23b55c6f2b809cbaf0eea24952683e397decfbd0dd0",
+    strip_prefix = "rules_proto-f6b8d89b90a7956f6782a4a3609b2f0eee3ce965",
     urls = [
-        "https://mirror.bazel.build/github.com/bazelbuild/rules_proto/archive/b0cc14be5da05168b01db282fe93bdf17aa2b9f4.tar.gz",
-        "https://github.com/bazelbuild/rules_proto/archive/b0cc14be5da05168b01db282fe93bdf17aa2b9f4.tar.gz",
+        "https://mirror.bazel.build/github.com/bazelbuild/rules_proto/archive/f6b8d89b90a7956f6782a4a3609b2f0eee3ce965.tar.gz",
+        "https://github.com/bazelbuild/rules_proto/archive/f6b8d89b90a7956f6782a4a3609b2f0eee3ce965.tar.gz",
     ],
 )
+
+load("@rules_proto//proto:repositories.bzl", "rules_proto_dependencies", "rules_proto_toolchains")
+rules_proto_dependencies()
+rules_proto_toolchains()
 
 # Needed only for testing stardoc across local-repository bounds.
 local_repository(
