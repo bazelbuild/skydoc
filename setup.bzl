@@ -65,8 +65,9 @@ def skydoc_repositories():
     _include_if_not_defined(
         http_archive,
         name = "bazel_skylib",
-        urls = ["https://github.com/bazelbuild/bazel-skylib/releases/download/0.8.0/bazel-skylib.0.8.0.tar.gz"],
-        sha256 = "2ef429f5d7ce7111263289644d233707dba35e39696377ebab8b0bc701f7818e",
+        urls = ["https://github.com/bazelbuild/bazel-skylib/archive/560d7b2359aecb066d81041cb532b82d7354561b.tar.gz"],
+        sha256 = "0cf18d7ba964b6a4ef4b21d471e3541cd22f7594512d172274d86647a87a2ffe",
+        strip_prefix = "bazel-skylib-560d7b2359aecb066d81041cb532b82d7354561b",
     )
     _include_if_not_defined(
         http_archive,
