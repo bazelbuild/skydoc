@@ -48,15 +48,15 @@ def _skylark_doc_impl(ctx):
         "--output_file=%s" % ctx.outputs.skylark_doc_zip.path,
     ]
     if ctx.attr.strip_prefix:
-        flags += ["--strip_prefix=%s" % ctx.attr.strip_prefix]
+        flags.append("--strip_prefix=%s" % ctx.attr.strip_prefix)
     if ctx.attr.overview:
-        flags += ["--overview"]
+        flags.append("--overview")
     if ctx.attr.overview_filename:
-        flags += ["--overview_filename=%s" % ctx.attr.overview_filename]
+        flags.append("--overview_filename=%s" % ctx.attr.overview_filename)
     if ctx.attr.link_ext:
-        flags += ["--link_ext=%s" % ctx.attr.link_ext]
+        flags.append("--link_ext=%s" % ctx.attr.link_ext)
     if ctx.attr.site_root:
-        flags += ["--site_root=%s" % ctx.attr.site_root]
+        flags.append("--site_root=%s" % ctx.attr.site_root)
     ctx.actions.run(
         inputs = inputs,
         tools = [skydoc],
@@ -96,6 +96,7 @@ skylark_doc = rule(
         "skylark_doc_zip": "%{name}-skydoc.zip",
     },
 )
+
 # buildozer: disable=no-effect
 """Generates Skylark rule documentation.
 
@@ -169,4 +170,3 @@ Example:
   By default, Skydoc will generate documentation in Markdown. To generate
   a set of HTML pages that is ready to be served, set `format = "html"`.
 """
-

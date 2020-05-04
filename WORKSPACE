@@ -31,11 +31,12 @@ git_repository(
 
 git_repository(
     name = "rules_python",
-    remote = "https://github.com/bazelbuild/rules_python.git",
     commit = "4b84ad270387a7c439ebdccfd530e2339601ef27",
+    remote = "https://github.com/bazelbuild/rules_python.git",
 )
 
 load("@rules_python//python:repositories.bzl", "py_repositories")
+
 py_repositories()
 
 # Needed only because of java_tools.
@@ -71,7 +72,9 @@ http_archive(
 )
 
 load("@rules_proto//proto:repositories.bzl", "rules_proto_dependencies", "rules_proto_toolchains")
+
 rules_proto_dependencies()
+
 rules_proto_toolchains()
 
 # Needed only for testing stardoc across local-repository bounds.

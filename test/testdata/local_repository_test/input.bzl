@@ -11,5 +11,3 @@ def min(integers):
     """
     _ignore = [integers]
     return 42
-
-

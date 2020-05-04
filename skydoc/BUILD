@@ -1,9 +1,9 @@
+load("@com_google_protobuf//:protobuf.bzl", "py_proto_library")
+load("@rules_python//python:defs.bzl", "py_binary", "py_library", "py_test")
+
 licenses(["notice"])  # Apache 2.0
 
 package(default_visibility = ["//visibility:public"])
-
-load("@com_google_protobuf//:protobuf.bzl", "py_proto_library")
-load("@rules_python//python:defs.bzl", "py_binary", "py_library", "py_test")
 
 py_proto_library(
     name = "build_pb_py",

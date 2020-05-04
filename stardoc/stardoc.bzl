@@ -53,6 +53,7 @@ def _stardoc_impl(ctx):
         omit_if_empty = True,
         uniquify = True,
     )
+
     # Needed in case some files are referenced across local repository
     # namespace. For example, consider a file under a nested local repository @bar
     # rooted under ./foo/bar/WORKSPACE. Consider a stardoc target 'lib_doc' under
@@ -61,7 +62,8 @@ def _stardoc_impl(ctx):
     # actual build is taking place in the root repository, thus the source file
     # is present under external/bar/lib.bzl.
     stardoc_args.add(
-        "--dep_roots=external/" + ctx.label.workspace_name)
+        "--dep_roots=external/" + ctx.label.workspace_name,
+    )
     stardoc_args.add_all(ctx.attr.semantic_flags)
     stardoc = ctx.executable.stardoc
 
@@ -188,7 +190,7 @@ non-default semantic flags required to use the given Starlark symbols.
         "rule_template": attr.label(
             doc = "The input file template for generating documentation of rules.",
             allow_single_file = [".vm"],
-            default =Label("//stardoc:templates/markdown_tables/rule.vm"),
+            default = Label("//stardoc:templates/markdown_tables/rule.vm"),
         ),
     },
 )

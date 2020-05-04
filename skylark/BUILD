@@ -1,9 +1,9 @@
+load("@bazel_skylib//:bzl_library.bzl", "bzl_library")
+load("//skylark:skylark.bzl", "skylark_doc")
+
 licenses(["notice"])  # Apache 2.0
 
 package(default_visibility = ["//visibility:public"])
-
-load("@bazel_skylib//:bzl_library.bzl", "bzl_library")
-load("//skylark:skylark.bzl", "skylark_doc")
 
 bzl_library(
     name = "skylark",
