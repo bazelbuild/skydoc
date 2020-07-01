@@ -21,6 +21,7 @@
 set -u
 
 actual_file=$1
+echo $1
 shift 1
 golden_file=$1
 shift 1

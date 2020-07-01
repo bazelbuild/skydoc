@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-"""Skylark rules"""
+"""Starlark rules"""
 
 load("@bazel_skylib//:bzl_library.bzl", "StarlarkLibraryInfo")
 
@@ -27,7 +27,7 @@ def _skydoc(ctx):
     fail("no valid .py file")
 
 def _skylark_doc_impl(ctx):
-    """Implementation of the skylark_doc rule."""
+    """Implementation of the starlark_doc rule."""
     skylark_doc_zip = ctx.outputs.skylark_doc_zip
     direct = []
     transitive = []

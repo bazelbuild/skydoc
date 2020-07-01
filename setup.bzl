@@ -61,7 +61,7 @@ py_library(
 
 # buildifier: disable=unnamed-macro
 def skydoc_repositories():
-    """Adds the external repositories used by the skylark rules."""
+    """Adds the external repositories used by the starlark rules."""
     _include_if_not_defined(
         http_archive,
         name = "bazel_skylib",
